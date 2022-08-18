@@ -118,7 +118,7 @@ routerCarrito.get("/:idCarro/",isAdmin, (req, res) => {
 })
 
 //Elimina un producto indicado de un carro indicado
-routerCarrito.delete("/:idCarro/:id", (req,res) => {
+routerCarrito.delete("/:idCarro/:id",isAdmin, (req,res) => {
     carrito.eliminarProdDeCarro(req.params.idCarro, req.params.id)
     .then((products) => res.json(products))
 })
